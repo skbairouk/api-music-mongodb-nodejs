@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "1dcdbc50-ba1a-4915-858e-a54852a63e62",
+		"name": "api music mongodb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14740572"
+	},
+	"item": [
+		{
+			"name": "song",
+			"item": [
+				{
+					"name": "GET all Songs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/songs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Song by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/songs/639c424ca9a1ac9fd7ecdcd5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"songs",
+								"639c424ca9a1ac9fd7ecdcd5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Song",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"title\": \"mysong1\",\r\n    \"url\": \"mysong1\",\r\n    \"rating\": 800,\r\n    \"artist\": \"639b3c789f3b867102b8cc50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/music/songs/update/:_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"songs",
+								"update",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "639c4267a9a1ac9fd7ecdcd7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete song",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"title\": \"mysong1\",\r\n    \"url\": \"mysong1\",\r\n    \"rating\": 800,\r\n    \"artist\": \"639b3c789f3b867102b8cc50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/music/songs/delete/639c4267a9a1ac9fd7ecdcd7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"songs",
+								"delete",
+								"639c4267a9a1ac9fd7ecdcd7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "playlist",
+			"item": [
+				{
+					"name": "GET all playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/playlists",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist for User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users/639c45c931015c9b6917c679/playlist",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users",
+								"639c45c931015c9b6917c679",
+								"playlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"playlist1\",\r\n    \"songs\": [\"639c424ca9a1ac9fd7ecdcd5\",\"639c4271a9a1ac9fd7ecdcd9\"],\r\n    \"user\": \"639c45c931015c9b6917c679\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/music/playlists/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"playlists",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"user64\",\r\n    \"lastName\": \"user64\",\r\n    \"email\": \"user64@user1.fr\",\r\n    \"password\": \"user64@user1.fr\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users/639b30d3cf1175f310aa9b52",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users",
+								"639b30d3cf1175f310aa9b52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users/delete/639c370ee60bb4c3c500e534",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users",
+								"delete",
+								"639c370ee60bb4c3c500e534"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"zz\",\r\n    \"lastName\": \"zz\",\r\n    \"email\": \"zz@bk.fr\",\r\n    \"password\": \"zz@bk.fr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/music/users/update/639b3c789f3b867102b8cc50",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"users",
+								"update",
+								"639b3c789f3b867102b8cc50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
