@@ -1,9 +1,10 @@
 
 const mongoose = require('mongoose');
-const User = require('../model/User');
 const Schema = mongoose.Schema;
+const Song = require("./Song")
+const Playlist = require("./Playlist")
 
-const songSchema = new Schema({
+const userSchema = new Schema({
     firstName: {
         type: String,
         required: true
@@ -22,11 +23,11 @@ const songSchema = new Schema({
         required: true
     },
     role: {
-        default:"normal" ,
+        default: "ROLE_USER",
         required: true,
         type: String,
-    }
-
+    },
+    songs: [{ type: Schema.Types.ObjectId, ref: 'song' }]
 });
 
 
